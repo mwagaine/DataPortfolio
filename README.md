@@ -7,19 +7,20 @@ Here, you can find a selection of projects I have been working on since I've sta
 
 <ins>Regression Modelling: Airbnb Prices</ins>
 <br>
-The aim of this project was to both predict the price of Airbnb listings in inner London using regression algorithms, and also gauge what factors contribute to their prices. 
+The aim of this project was to both predict the price of Airbnb listings in inner London using regression algorithms, and also gauge what factors contribute to their prices which can be used to help solve the housing crisis. 
 
 <ins>Classification Modelling: Songs</ins>
 <br>
 For this project, I was given just a day to explore a music dataset, using supervised and unsuperivsed classification models to see if I could either predict the class of a song or if I could group songs together and determine what brought them together in the first place. 
 
-<ins>Web Scraping: UK Number 1 Singles of 1999</ins>
-<br>
-In this project, I scraped data from Wikipedia to produce a table of all the weeks. included the name of artist, song and the sales the song accumulated that week in order to reach the summit.
-
 
 ## SQL projects
 
-<ins>Data Cleaning: Housing in Nashville</ins>
+<ins>Data Cleaning: Nashville Housing</ins>
+<br>
+A project in which a datatset relating to housing in Nashville, USA was cleaned, ready for further analysis. 
+
 
 <ins>Data Exploration: Covid-19</ins>
+<br>
+A project in which statistics and trends were derived from a dataset which relating to Covid-19 cases worldwide.
