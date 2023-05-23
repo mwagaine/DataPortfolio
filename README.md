@@ -18,9 +18,9 @@ For this project, I was given just a day to explore a music dataset, using super
 
 <ins>Data Cleaning: Nashville Housing</ins>
 <br>
-A project in which a datatset relating to housing in Nashville, USA was cleaned, ready for further analysis. 
+A project in which a datatset relating to housing in Nashville, USA was cleaned that can be found in the repositry - <i>Data Cleaning - Nashville Housing.sql</i>.
 
 
 <ins>Data Exploration: Covid-19</ins>
 <br>
-A project in which statistics and trends were derived from a dataset which relating to Covid-19 cases worldwide.
+A project in which statistics and trends were derived from two Covid-19 datasets that can be found in the repositry - <i>CovidDeaths.xlsx</i> and <i>CovidVaccinations.xlsx</i>.
