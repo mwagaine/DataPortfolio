@@ -7,7 +7,7 @@ Here, you can find a selection of projects I have been working on since I've sta
 
 <ins>Web Scraping and Exploratory Data Analysis: UK Number 1 Singles of 1999</ins>
 <br>
-This project saw me scrape data from a Wikipedia table containing every song that topped the UK Singles Chart in 1999 included the total number of sales accumulated for each song per week, followed by some data analysis to spot significant sales trends.
+This project saw me scrape data from a Wikipedia table containing every song that topped the UK Singles Chart in 1999 and how many units each song sold per week, followed by some data analysis to spot significant sales trends.
 
 <ins>Regression Modelling: Airbnb Prices</ins>
 <br>
