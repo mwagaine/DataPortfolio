@@ -13,6 +13,10 @@ The aim of this project was to both predict the price of Airbnb listings in inne
 <br>
 For this project, I was given just a day to explore a music dataset, using supervised and unsuperivsed classification models to see if I could either predict the class of a song or if I could group songs together and determine what brought them together in the first place. 
 
+<ins>Web Scraping and Exploratory Data Analysis: UK Number 1 Singles of 1999</ins>
+<br>
+This project saw me scrape data from a Wikipedia table containing every song that topped the UK Singles Chart in 1999 included the total number of sales accumulated for each song per week, followed by some data analysis to spot significant sales trends. 
+
 
 ## SQL projects
 
