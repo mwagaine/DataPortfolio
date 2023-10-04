@@ -1,30 +1,11 @@
-# DataPortfolio
+# Portfolio
 
-Here, you can find a selection of projects I have been working on since I've started retraining as a data scientist. 
+Here you can find a selection of projects I have been working on, grouped by the following topics. 
 
-
-## Python projects 
-
-<ins>Web Scraping and Exploratory Data Analysis: UK Number 1 Singles of 1999</ins>
+<ins>Data engineering projects</ins>
 <br>
-This project saw me scrape data from a Wikipedia table containing every song that topped the UK Singles Chart in 1999 and how many units each song sold per week, followed by some data analysis to spot significant sales trends.
+These consist of building data pipelines such as ETL and CDC, using PostgreSQL and MySQL databases alongside AWS and Spark.
 
-<ins>Regression Modelling: Airbnb Prices</ins>
+<ins>Data science projects</ins>
 <br>
-The aim of this project was to both predict the price of Airbnb listings in inner London using regression algorithms, and also gauge what factors contribute to their prices which can be used to help solve the housing crisis. 
-
-<ins>Classification Modelling: Songs</ins>
-<br>
-For this project, I was given just a day to explore a music dataset, using supervised and unsuperivsed classification models to see if I could either predict the class of a song or if I could group songs together and determine what brought them together in the first place. 
-
-
-## SQL projects
-
-<ins>Data Cleaning: Nashville Housing</ins>
-<br>
-A project in which a datatset relating to housing in Nashville, USA was cleaned that can be found in the repositry - <i>Data Cleaning - Nashville Housing.sql</i>.
-
-
-<ins>Data Exploration: Covid-19</ins>
-<br>
-A project in which statistics and trends were derived from two Covid-19 datasets that can be found in the repositry - <i>CovidDeaths.xlsx</i> and <i>CovidVaccinations.xlsx</i>.
+These include using machine learning algorithms to understand and solve regression and classification problems.
