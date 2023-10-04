@@ -13,7 +13,9 @@
 
 The aim of this project is to create an ETL pipeline. ETL stands for "Extract, Transform and Load", so (as you might have guessed) we will be creating a pipeline that extracts data from a given source, and transforms it before loading it into a separate database. I wanted to venture into ETL because it is a common pipeline design used throughout data engineering that allows organisations to consolidate data from various databases into one hub in a standardised format, ready for analysis and further processing.
 
-As someone with an interest in popular culture, I wanted to extract music sales data relating to songs that topped the UK Singles Chart throughout 1999. This was at the peak of physical CD sales and recording music industry revenue before the rise of the internet took hold. The data will be extracted by web-scraping <a href='https://en.wikipedia.org/wiki/1999_in_British_music_charts#Charts'>this Wikitable</a>. After the data is loaded into the database, we will perform some exploratory data analysis with a series of SQL queries. You can also find the final data in the Data folder.
+As someone with an interest in popular culture, I wanted to extract music sales data relating to songs that topped the UK Singles Chart throughout 1999. This was at the peak of physical CD sales and recording music industry revenue before the rise of the rise of the internet, file-sharing and illegal downloads through sites such as Napster decimated record sales.
+
+The data will be extracted by web-scraping <a href='https://en.wikipedia.org/wiki/1999_in_British_music_charts#Charts'>this Wikitable</a>. After the data is loaded into the database, we will perform some exploratory data analysis with a series of SQL queries. You can also find the final data in the Data folder.
 
 Please follow this project in the given order of files:
 <ol>
