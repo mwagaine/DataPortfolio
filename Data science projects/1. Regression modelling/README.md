@@ -13,8 +13,8 @@ Since price is a continuous variable and data labelled with this known target is
 Please follow this project in the given order of files:
 
 <ol>
-    <li>ETL pipeline</li>
-    <li>Exploratory data analysis</li>
+    <li>Regression modelling</li>
+    <li>Project review</li>
 </ol>
 
 ## Prerequisites
