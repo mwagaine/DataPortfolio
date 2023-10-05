@@ -4,15 +4,15 @@
 ## Contents
 
 <ol>
-    <li>Description</li>
-    <li>Prerequisites</li>
+    <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#description'>Description</a></li>
+    <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#prerequisites'>Prerequisites</a></li>
         <ul>
-            <li>RDS for PostgreSQL and MySQL</li>
-            <li>S3 bucket</li>
-            <li>DMS (Data Migration Service)</li>
-            <li>Lambda and Glue</li>
-            <li>CloudWatch</li>
-            <li>IAM (Identity and Access Management)</li>
+            <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#rds-for-postgresql-and-mysql-databases'>RDS for PostgreSQL and MySQL</a></li>
+            <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#s3-bucket'>S3 bucket</a></li>
+            <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#dms-data-migration-service'>DMS (Data Migration Service)</a></li>
+            <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#lambda-and-glue'>Lambda and Glue</a></li>
+            <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#cloudwatch'>CloudWatch</a></li>
+            <li><a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline#iam-identity-and-access-management'>IAM (Identity and Access Management)</a></li>
         </ul>
 </ol>
 
@@ -38,7 +38,7 @@ Please follow this project in the given order of files:
 Before you start this project, you must set up and access the following AWS services. 
 
 ### <ins>RDS for PostgreSQL and MySQL databases</ins>
-<br>
+
 The source PostgreSQL database would have already been set up in RDS (Relational Database Service) if you completed the previous ETL project. If not, click <a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#project-prerequisites'>here</a> where you can find details of how to do so. Afterwards, import the data for this project (found in the Data folder) into the database by following <a href='https://learnsql.com/blog/how-to-import-csv-to-postgresql/'>these instructions</a>.
 
 Next, you'll need to create a MySQL database as the ultimate target of the CDC pipeline.
@@ -77,14 +77,14 @@ Next, you'll need to create a MySQL database as the ultimate target of the CDC p
 
 
 ### <ins>S3 bucket</ins>
-<br>
+
 The Amazon S3 service lets you to store data as .csv files inside directories or buckets. For this task, one S3 bucket will be made to act as the target for the DMS migration task (more on that soon). It will essentially act as staging area in the middle of the pipeline, before the data finally reaches the final target MySQL database. During the full load, data from the source is stored in a .csv titled with the prefix <i>LOAD</i>. Once changes are made to the data at the source, a separate file containing this CDC data (titled with a timestamp) is also added to the same bucket folder.
 
 To create a bucket, go to the S3 management console in AWS and click <i>Create bucket</i>. In the set-up, untick the <i>Block all public access</i></li> box (this isn't usually advisable, but for this project do so to minimise the chances of connection issues).
 
  
 ### <ins>DMS (Data Migration Service)</ins>
-<br>
+
 DMS lets you to migrate data between two different locations. For this project, we will be using DMS to migrate data from our source PostgreSQL database to our S3 bucket. To do so, we need to create a <b>replication instance</b> (which connects the RDS PostgreSQL database to the S3 bucket), <b>two endpoints</b> and <b>a migration task</b> (which will move data from RDS to S3).
 
 To create the replication instance:
@@ -151,7 +151,7 @@ Lastly, let's create the migration task.
 
 
 ### <ins>Lambda and Glue</ins>
-<br>
+
 The final part of the CDC pipeline involves writing data from the S3 bucket to the target MySQL database. Any time data enters the S3 bucket, this triggers a Lambda function that extracts the location of the file. This is then invokes a Glue job which uses this information to read in this file, make any changes, before writing it to MySQL. 
 
 Whenever new data or files enter the S3 bucket, this triggers the Lambda function to extract the filepath and location of the data within the bucket. Once extracted, this invokes the Glue job which uses this information to read, and write this to the target database. 
@@ -160,13 +160,13 @@ Set-up for both the Lambda function and Glue job will take place later on in the
 
 
 ### <ins>CloudWatch</ins>
-<br>
+
 This is a handy monitoring service that stores logs and metrics of each job that’s being run within AWS. This is great for debugging as you’ll be able to check why and how your Lambda function or Glue job may have failed.
 
 You won't need to set these up now, further details will be revealed as you through the project files in the correct order.
 
 ### <ins>IAM (Identity and Access Management)</ins>
-<br>
+
 At the beginning of some of these previous AWS set-ups, you would have noticed IAM being involed. In IAM, you can create roles that you can assign to an AWS service, giving it permission to access other services so that it can perform their tasks. 
 
 That's why, for instance, you create roles that you can assign to different services which
