@@ -4,13 +4,13 @@
 ## Contents
 
 <ol>
-    <li>Project description</li>
-    <li>Project prerequisites
+    <li><a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#description'>Description</a></li>
+    <li><a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#prerequisites'>Prerequisites</a>
       <ul>
-        <li><a href='#'>Spark</a></li>
-        <li><a href='#'>Databricks</a></li>
-        <li><a href='#'>AWS (Amazon Web Services)</a></li>
-        <li><a href='#'>PostgreSQL database</a></li>
+        <li><a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#spark'>Spark</a></li>
+        <li><a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#databricks'>Databricks</a></li>
+        <li><a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#aws-amazon-web-services'>AWS (Amazon Web Services)</a></li>
+        <li><a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#postgresql-database'>PostgreSQL database</a></li>
       </ul>
     </li>
 </ol>
