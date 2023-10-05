@@ -10,6 +10,12 @@ This project presents a potential solution to this problem - using machine learn
 
 Since price is a continuous variable and data labelled with this known target is needed to make predictions, I will be using supervised regression models to solve this problem. RMSE (root mean squared error) is the metric of choice used to measure the performance of each model used in this project.
 
+Please follow this project in the given order of files:
+
+<ol>
+    <li>ETL pipeline</li>
+    <li>Exploratory data analysis</li>
+</ol>
 
 ## Prerequisites
 
