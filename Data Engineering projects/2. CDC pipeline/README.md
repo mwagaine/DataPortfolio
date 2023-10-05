@@ -39,7 +39,7 @@ Before you start this project, you must set up and access the following AWS serv
 
 ### <ins>RDS for PostgreSQL and MySQL databases</ins>
 
-The source PostgreSQL database would have already been set up in RDS (Relational Database Service) if you completed the previous ETL project. If not, click <a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#project-prerequisites'>here</a> where you can find details of how to do so. Afterwards, import the data for this project (found in the Data folder) into the database by following <a href='https://learnsql.com/blog/how-to-import-csv-to-postgresql/'>these instructions</a>.
+The source PostgreSQL database would have already been set up in RDS (Relational Database Service) if you completed the previous ETL project. If not, click <a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#postgresql-database'>here</a> where you can find details of how to do so. Afterwards, import the data for this project (found in the Data folder) into the database by following <a href='https://learnsql.com/blog/how-to-import-csv-to-postgresql/'>these instructions</a>.
 
 Next, you'll need to create a MySQL database as the ultimate target of the CDC pipeline.
 
