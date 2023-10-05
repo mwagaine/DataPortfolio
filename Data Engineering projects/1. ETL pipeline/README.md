@@ -1,15 +1,22 @@
-# ETL project overview
+# Project overview
 
 
 ## Contents
 
 <ol>
     <li>Project description</li>
-    <li>Project prerequisites</li>
+    <li>Project prerequisites
+      <ul>
+        <li><a href='#'>Spark</a></li>
+        <li><a href='#'>Databricks</a></li>
+        <li><a href='#'>AWS (Amazon Web Services)</a></li>
+        <li><a href='#'>PostgreSQL database</a></li>
+      </ul>
+    </li>
 </ol>
 
 
-## Project description 
+## Description 
 
 The aim of this project is to create an ETL pipeline. ETL stands for "Extract, Transform and Load", so (as you might have guessed) we will be creating a pipeline that extracts data from a given source, and transforms it before loading it into a separate database. I wanted to venture into ETL because it is a common pipeline design used throughout data engineering that allows organisations to consolidate data from various databases into one hub in a standardised format, ready for analysis and further processing.
 
@@ -24,27 +31,27 @@ Please follow this project in the given order of files:
 </ol>
 
 
-## Project prerequisites
+## Prerequisites
 
 Before you start this project, you must to set up and access the following technologies. 
 
-<ins>Spark</ins>
-<br>
+### <ins>Spark</ins>
+
 Spark is an engine that executes all sorts of processing and analysis on large amounts of data. You can use different languages to communicate with Spark to perform these tasks; here we will be using Python (PySpark). For a more detailed guide on how to install Spark on Windows click <a href=''>here</a>, otherwise if you are a Mac user click <a href='https://medium.com/beeranddiapers/installing-apache-spark-on-mac-os-ce416007d79f'>here</a>. 
 
 
-<ins>Databricks</ins>
-<br>
+### <ins>Databricks</ins>
+
 Next, you will need a platform that is powered by Spark where you can run your script in a notebook to extract, transform and load the data. I used Databricks which offers a free Community edition <a href='https://docs.databricks.com/en/getting-started/community-edition.html'>here</a> if you don't already have it. 
 
 
-<ins>AWS</ins>
-<br>
-AWS (Amazon Web Services) provides a whole range of services for cloud computing. For this project, we will use their RDS (Relational Database Service) to create the PostgreSQL database where our data will be loaded. You can create a free AWS account <a href='https://aws.amazon.com/free/'>here</a>.
+### <ins>AWS (Amazon Web Services)</ins>
+
+AWS provides a whole range of services for cloud computing. For this project, we will use their RDS (Relational Database Service) to create the PostgreSQL database where our data will be loaded. You can create a free AWS account <a href='https://aws.amazon.com/free/'>here</a>.
 
 
-<ins>PostgreSQL database</ins>
-<br>
+### <ins>PostgreSQL database</ins>
+
 Finally, you'll need to create the database where the data will be loaded. We will be using a database that runs on PostgreSQL, and this can be created using AWS (Amazon Web Services).
 
 <ol>
