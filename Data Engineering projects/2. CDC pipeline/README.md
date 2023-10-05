@@ -20,9 +20,7 @@
 
 This project follows on from the previous ETL project, and the aim is to create a CDC pipeline. CDC stands for "Change Data Capture", allowing organisations to not only pool data from different sources into one place, but also make changes to the data at the source that can be quickly reflected in the target storage area. This is very efficient as it saves time having to manually apply changes repeatedly across the board.
 
-Our pipeline will consist of a source database (PostgreSQL) that loads data into a storage folder (S3 bucket) via a migration task - this is known as a full load. This data or load is then written into a final target database (MySQL). Afterwards, changes will be made at the source (e.g. adding, deleting and updating table rows) that will be replicated in the target table. 
-
-The data used in this project is the same data that was funnelled through my previous ETL project which can be found <a href='#'>here</a>. You can also download the data from the file in this repositry.
+Our pipeline will consist of a source database (PostgreSQL) that loads music sales data into a storage folder (S3 bucket) via a migration task - this is known as a full load. This data or load is then written into a final target database (MySQL). Afterwards, changes will be made at the source (e.g. adding, deleting and updating table rows) that will be replicated in the target table. 
 
 Please follow this project in the given order of files:
 <ol>
@@ -39,7 +37,7 @@ Before you start this project, you must set up and access the following AWS serv
 
 ### <ins>RDS for PostgreSQL and MySQL databases</ins>
 
-The source PostgreSQL database would have already been set up in RDS (Relational Database Service) if you completed the previous ETL project. If not, click <a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#postgresql-database'>here</a> where you can find details of how to do so. Afterwards, import the data for this project (found in the Data folder) into the database by following <a href='https://learnsql.com/blog/how-to-import-csv-to-postgresql/'>these instructions</a>.
+The source PostgreSQL database would have already been set up in RDS (Relational Database Service) if you completed the previous ETL project. If not, click <a href='https://github.com/mwagaine/DataPortfolio/blob/main/Data%20Engineering%20projects/1.%20ETL%20pipeline/README.md#postgresql-database'>here</a> where you can find details of how to do so. Afterwards, import the data for this project (found in the Data folder) into the database by following <a href='https://learnsql.com/blog/how-to-import-csv-to-postgresql/'>these instructions</a>. If you completed the ETL project, you would have already loaded the data there.
 
 Next, you'll need to create a MySQL database as the ultimate target of the CDC pipeline.
 
