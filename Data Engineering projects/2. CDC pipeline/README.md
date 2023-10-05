@@ -90,18 +90,9 @@ DMS lets you to migrate data between two different locations. For this project, 
 To create the replication instance:
 <ol>
     <li>Go the DMS Management Console and go to <i>Replication instances</i> to create a new one.
-    <br>
-        <ul>
-            <li>For <i>Instance class</i>, select dms.t3.micro.</li>
-            <li>For <i>Connectivity and security</i>, make sure that the IPv4 network type is selected alongside the default options for VPC, replication subnet groups and VPC security groups.</li>
-            <li></li>
-            <li></li>
-        </ul>
-    </li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>For <i>Instance class</i>, select dms.t3.micro.</li>
+    <li>For <i>Connectivity and security</i>, make sure that the IPv4 network type is selected alongside the default options for VPC, replication subnet groups and VPC security groups.</li>
+    <li>In the same section, make sure that <i>Public accessible</i> box is ticked.</li>
 </ol>
 
 Next, we need to an endpoint for the PostgreSQL database.
@@ -119,7 +110,7 @@ Next, we need to an endpoint for the PostgreSQL database.
     </li>
 </ol>
 
-Afterwards we need to create another endpoint, this time for the S3 bucket.
+Afterwards we need to create the endpoint for the S3 bucket.
 <ol>
     <li>Go the IAM Management Console and create a new role with a DMS use case, selecting the following policy:
     <br>
@@ -142,12 +133,20 @@ Afterwards we need to create another endpoint, this time for the S3 bucket.
 </ol>
 
 Lastly, let's create the migration task.
-<ul>
-    <li>A replication instance </li>
+<ol>
     <li>Select the replication instance, source endpoint and target endpoint created previously.</li>
     <li>Under <i>Migration type</i>, select <i>Migrate existing data and replicate ongoing changes</i>.</li>
+    <li>For <i>Advanced task settings</i>, set the maximum number of tables to load in parallel to 8.</li>
+    <li>In <i>Table mappings</i>, add a new selection rule specifying the following:
+        <ul>
+            <li><i>Schema</i>: Enter a schema</li>
+            <li><i>Source name</i>: matt_schema</li>
+            <li><i>Source table name</i>: songsales</li>
+            <li><i>Action</i>: Include</li>
+        </ul>    
+    </li>
     <li>For <i>Migration task startup configuration</i>, select <i>Manually later</i>.</li>
-</ul>
+</ol>
 
 
 ### <ins>Lambda and Glue</ins>
@@ -161,12 +160,11 @@ Set-up for both the Lambda function and Glue job will take place later on in the
 
 ### <ins>CloudWatch</ins>
 
-This is a handy monitoring service that stores logs and metrics of each job that’s being run within AWS. This is great for debugging as you’ll be able to check why and how your Lambda function or Glue job may have failed.
+This is a handy monitoring service that stores logs of each job that’s being run within AWS. This is great for debugging as you’ll be able to check why and how your Lambda function or Glue job may have failed.
 
-You won't need to set these up now, further details will be revealed as you through the project files in the correct order.
 
 ### <ins>IAM (Identity and Access Management)</ins>
 
-At the beginning of some of these previous AWS set-ups, you would have noticed IAM being involed. In IAM, you can create roles that you can assign to an AWS service, giving it permission to access other services so that it can perform their tasks. 
+At the beginning of some of these AWS set-ups, you would have noticed IAM being involed. In IAM, you can create roles that are assigned to a particular AWS service, giving it permission to access other services to perform tasks that are dependent on them. 
 
-That's why, for instance, you create roles that you can assign to different services which
+For instance, we needed to give DMS permission to access S3 so that an S3 bucket can be linked to a DMS target endpoint. Later when you create a Lambda function and Glue job, you'll need to give them both access to the services containing the data they'll be reading (i.e. S3 and RDS). You'll also have to give Lambda and Glue access to CloudWatch for their logs to be stored and tracked otherwise you won't be able to troubleshoot any issues.
