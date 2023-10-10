@@ -134,11 +134,11 @@ Lastly, let's create the migration task.
 <ol>
     <li>Select the replication instance, source endpoint and target endpoint created previously.</li>
     <li>Under <i>Migration type</i>, select <i>Migrate existing data and replicate ongoing changes</i>.</li>
-    <li>For <i>Advanced task settings</i>, set the maximum number of tables to load in parallel to 8.</li>
+    <li>For <i>Advanced task settings</i>, set the maximum number of tables to load in parallel to 1.</li>
     <li>In <i>Table mappings</i>, add a new selection rule specifying the following:
         <ul>
             <li><i>Schema</i>: Enter a schema</li>
-            <li><i>Source name</i>: matt_schema</li>
+            <li><i>Source name</i>: mwag_pyspark</li>
             <li><i>Source table name</i>: songsales</li>
             <li><i>Action</i>: Include</li>
         </ul>    
