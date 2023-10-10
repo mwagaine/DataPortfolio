@@ -74,6 +74,7 @@ Finally, you'll need to create the database where the data will be loaded. We wi
   <br>
   following the instructions <a href='https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateDBInstance.html'>here</a> except:
   <ul>
+      <li>In the <i>Storage autoscaling</i> section, untick the <i>Enable storage autoscaling</i> box.</li>
       <li>In the <i>Connectivity</i> section, select <i>Don’t connect to an EC2 compute resource</i>.</li>
       <li>In the same section, ensure the default VPC, DB subnet group and VPC security group options are selected.</li>
       <li>In the <i>Additional configuration</i> section, leave the initial database name blank - it defaults to <i>postgres</i>.</li>
