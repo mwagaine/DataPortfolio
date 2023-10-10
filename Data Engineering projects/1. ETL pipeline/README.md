@@ -80,6 +80,7 @@ Finally, you'll need to create the database where the data will be loaded. We wi
       <li>In the same section, select <i>Yes</i> for <i>Public access</i>.</li>
       <li>In the <i>Additional configuration</i> section, leave the initial database name blank - it defaults to <i>postgres</i>.</li>
       <li>In the same section, select the DB parameter group you've just created.</li>
+      <li>In the same section, untick the <i>Enable encryption</i> box.</li>
       <li>In the same section, untick the <i>Enable automated backups</i> box.</li>
       <li>In the same section, untick the <i>Enable auto minor version upgrade</i> box under <i>Maintenance</i>.</li>
     </ul>
