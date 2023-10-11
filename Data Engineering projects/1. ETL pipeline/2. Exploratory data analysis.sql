@@ -33,40 +33,6 @@ FROM mwag_pyspark.songsales
 WHERE "Artists" NOT LIKE '% %';
 
 
--- Find the average sales per month for a Number 1 song in 1999
-SELECT (CASE 
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 01 THEN 'January'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 02 THEN 'February'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 03 THEN 'March'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 04 THEN 'April'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 05 THEN 'May'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 06 THEN 'June'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 07 THEN 'July'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 08 THEN 'August'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 09 THEN 'September'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 10 THEN 'October'
-            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 11 THEN 'November'
-            ELSE 'December'
-        END) AS Month,
-        FLOOR(AVG("Sales")) AS Average_Sales
-FROM mwag_pyspark.songsales
-GROUP BY Month
-ORDER BY Average_Sales DESC;  
-
-
--- Find the average sales per quarter for a Number 1 song in 1999
-SELECT (CASE 
-            WHEN MONTH("ChartDate_WeekEnding") IN (01, 02, 03) THEN 'Q1'
-            WHEN MONTH("ChartDate_WeekEnding") IN (04, 05, 06) THEN 'Q2'
-            WHEN MONTH("ChartDate_WeekEnding") IN (07, 08, 09) THEN 'Q3'
-            ELSE 'Q4'
-        END) AS Quarter,
-        FLOOR(AVG("Sales")) AS Average_Sales
-FROM mwag_pyspark.songsales
-GROUP BY Quarter
-ORDER BY Average_Sales DESC;
-
-
 -- Show the chart weeks that generated more sales than average number of weekly sales for the year
 SELECT *
 FROM mwag_pyspark.songsales
@@ -122,6 +88,40 @@ SELECT *,
        ROUND((SUM("Sales") OVER (ORDER BY "ChartDate_WeekEnding")) / (SELECT SUM("Sales")
 								      FROM mwag_pyspark.songsales) * 100, 2) AS Percentage_Sales
 FROM mwag_pyspark.songsales;
+
+
+-- Find the average sales per month for a Number 1 song in 1999
+SELECT (CASE 
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 01 THEN 'January'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 02 THEN 'February'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 03 THEN 'March'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 04 THEN 'April'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 05 THEN 'May'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 06 THEN 'June'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 07 THEN 'July'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 08 THEN 'August'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 09 THEN 'September'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 10 THEN 'October'
+            WHEN EXTRACT(MONTH FROM "ChartDate_WeekEnding") = 11 THEN 'November'
+            ELSE 'December'
+        END) AS Month,
+        FLOOR(AVG("Sales")) AS Average_Sales
+FROM mwag_pyspark.songsales
+GROUP BY Month
+ORDER BY Average_Sales DESC;  
+
+
+-- Find the average sales per quarter for a Number 1 song in 1999
+SELECT (CASE 
+            WHEN MONTH("ChartDate_WeekEnding") IN (01, 02, 03) THEN 'Q1'
+            WHEN MONTH("ChartDate_WeekEnding") IN (04, 05, 06) THEN 'Q2'
+            WHEN MONTH("ChartDate_WeekEnding") IN (07, 08, 09) THEN 'Q3'
+            ELSE 'Q4'
+        END) AS Quarter,
+        FLOOR(AVG("Sales")) AS Average_Sales
+FROM mwag_pyspark.songsales
+GROUP BY Quarter
+ORDER BY Average_Sales DESC;
 
 
 -- Find the top 5 sales weeks per quarter of 1999
