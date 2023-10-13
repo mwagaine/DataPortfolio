@@ -20,7 +20,7 @@
 
 The aim of this project is to create an ETL pipeline. ETL stands for "Extract, Transform and Load", so (as you might have guessed) we will be creating a pipeline that extracts data from a given source, and transforms it before loading it into a separate database. I wanted to venture into ETL because it is a common pipeline design used throughout data engineering that allows organisations to consolidate data from various databases into one hub in a standardised format, ready for analysis and further processing.
 
-As someone with an interest in popular culture, I wanted to extract music sales data relating to songs that topped the UK Singles Chart throughout 1999. This was at the peak of physical CD sales and recording music industry revenue before the rise of the rise of the internet, file-sharing and illegal downloads through sites such as Napster decimated record sales.
+As someone with an interest in popular culture, I wanted to extract music sales data relating to songs that topped the UK Singles Chart throughout 1999. This was at the peak of physical CD sales and recording music industry revenue before the rise of the internet, file-sharing and illegal downloads through sites such as Napster decimated record sales.
 
 The data will be extracted by web-scraping <a href='https://en.wikipedia.org/wiki/1999_in_British_music_charts#Charts'>this Wikitable</a>. After the data is loaded into the database, we will perform some exploratory data analysis with a series of SQL queries. You can also find the final data in the Data folder.
 
@@ -37,7 +37,7 @@ Before you start this project, you must to set up and access the following techn
 
 ### <ins>Spark</ins>
 
-Spark is an engine that executes all sorts of processing and analysis on large amounts of data. You can use different languages to communicate with Spark to perform these tasks; here we will be using Python (PySpark). For a more detailed guide on how to install Spark on Windows click <a href=''>here</a>, otherwise if you are a Mac user click <a href='https://medium.com/beeranddiapers/installing-apache-spark-on-mac-os-ce416007d79f'>here</a>. 
+Spark is an engine that executes all sorts of processing and analysis on large amounts of data. You can use different languages to communicate with Spark to perform these tasks; here we will be using Python (PySpark). For a more detailed guide on how to install Spark on Windows click <a href='https://www.knowledgehut.com/blog/big-data/how-to-install-apache-spark-on-windows'>here</a>, otherwise if you are a Mac user click <a href='https://medium.com/beeranddiapers/installing-apache-spark-on-mac-os-ce416007d79f'>here</a>. 
 
 
 ### <ins>Databricks</ins>
