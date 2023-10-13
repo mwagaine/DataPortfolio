@@ -149,9 +149,9 @@ Lastly, let's create the migration task.
 
 ### <ins>Lambda and Glue</ins>
 
-The final part of the CDC pipeline involves writing data from the S3 bucket to the target MySQL database. Any time data enters the S3 bucket, this triggers a Lambda function that extracts the location of the file. This is then invokes a Glue job which uses this information to read in this file, make any changes, before writing it to MySQL. 
+The final part of the CDC pipeline involves writing data from the S3 bucket to the target MySQL database. Any time new data enters the S3 bucket, this triggers a Lambda function that extracts the location of the file. This then invokes a Glue job which uses this information to read in this file and make any changes, before writing it to MySQL. 
 
-Whenever new data or files enter the S3 bucket, this triggers the Lambda function to extract the filepath and location of the data within the bucket. Once extracted, this invokes the Glue job which uses this information to read, and write this to the target database. 
+After the full load of the DMS migration task is complete, the S3 bucket will contain one file with the original data before it is written into MySQL. When changes are made to the source data, a second file containing CDC data (i.e. information about the changes made to the data) will also be added to the S3 bucket. Lambda and Glue uses this CDC data to overwrite the target MySQL table with changes made at the source.
 
 Set-up for both the Lambda function and Glue job will take place later on in the project within their respective scripts. 
 
@@ -163,6 +163,6 @@ This is a handy monitoring service that stores logs of each job that’s being r
 
 ### <ins>IAM (Identity and Access Management)</ins>
 
-At the beginning of some of these AWS set-ups, you would have noticed IAM being involed. In IAM, you can create roles that are assigned to a particular AWS service, giving it permission to access other services to perform tasks that are dependent on them. 
+At the beginning of some of these AWS set-ups, you would have noticed IAM being involved. In IAM, you can create roles that are assigned to a particular AWS service, giving it permission to access other services to perform tasks that are dependent on them. 
 
 For instance, we needed to give DMS permission to access S3 so that an S3 bucket can be linked to a DMS target endpoint. Later when you create a Lambda function and Glue job, you'll need to give them both access to the services containing the data they'll be reading (i.e. S3 and RDS). You'll also have to give Lambda and Glue access to CloudWatch for their logs to be stored and tracked otherwise you won't be able to troubleshoot any issues.
