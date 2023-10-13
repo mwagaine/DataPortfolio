@@ -22,7 +22,7 @@ The aim of this project is to create an ETL pipeline. ETL stands for "Extract, T
 
 As someone with an interest in popular culture, I wanted to extract music sales data relating to songs that topped the UK Singles Chart throughout 1999. This was at the peak of physical CD sales and recording music industry revenue before the rise of the internet, file-sharing and illegal downloads through sites such as Napster decimated record sales.
 
-The data will be extracted by web-scraping <a href='https://en.wikipedia.org/wiki/1999_in_British_music_charts#Charts'>this Wikitable</a>. After the data is loaded into the database, we will perform some exploratory data analysis with a series of SQL queries. You can also find the final data in the Data folder.
+The data will be extracted by web-scraping <a href='https://en.wikipedia.org/wiki/1999_in_British_music_charts#Charts'>this Wikitable</a>. After the data is loaded into the database, we will perform some exploratory data analysis with a series of SQL queries. You can also find the final data <a href='https://github.com/mwagaine/DataPortfolio/tree/main/Data%20Engineering%20projects/2.%20CDC%20pipeline/Data'>here</a>.
 
 Please follow this project in the given order of files:
 <ol>
