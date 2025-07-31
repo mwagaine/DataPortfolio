@@ -1,4 +1,4 @@
-# Projects
+# Data Science Projects
 
 <ins>Regression modelling</ins>
 <br>
