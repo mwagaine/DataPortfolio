@@ -22,6 +22,7 @@ valid_repos = []
 dead_letter_queue = []
 
 for repo in response.json():
+    # Validate data
     validation_result = validate_repo(repo, schema, required_results)
 
     if not validation_result.is_valid():
@@ -35,6 +36,7 @@ for repo in response.json():
             validation_result
         )
     else:
+        # Normalise data
         repo, validation_result = normalise_repo(
             repo,
             validation_result,
@@ -55,8 +57,10 @@ for repo in response.json():
             logging.info(
                 f"'{repo['name']}' repository is valid, preparing for business transformation..."
             )
+            # Transform data
             valid_repos.append(transform_repo(repo, schema))
 
+# Load data to database
 main_df = create_df(valid_repos, df_schema)
 dlq_df = create_df(dead_letter_queue, dlq_schema)
 
@@ -66,6 +70,7 @@ print(f"PRE-LOAD DLQ:\n{dlq_df}\n\n")
 load_to_database(main_df, 'github_api.db', 'repositories')
 load_to_database(dlq_df, 'github_api.db', 'dead_letter_queue')
 
+# Read back data from database
 with sqlite3.connect('github_api.db') as connection:
     loaded_dfs = [
         pd.read_sql(f"SELECT * FROM {table}", connection)
